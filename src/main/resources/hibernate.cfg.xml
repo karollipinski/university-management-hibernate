@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <!--skonfigurować username i password do swojej bazy danych-->
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password"></property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/university-managment?characterEncoding=UTF-8</property>
+        <property name="format_sql">false</property>
+        <property name="show_sql">true</property>
+
+        <!-- automatyczne towrzenie modelu opcje:none, validate, create, update, create-drop -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- mapowanie encji na tabela i tabel na encje -->
+        <mapping class="pl.four.software.management.model.Student"/>
+        <mapping class="pl.four.software.management.model.Address"/>
+        <mapping class="pl.four.software.management.model.Subject"/>
+        <mapping class="pl.four.software.management.model.University"/>
+        <mapping class="pl.four.software.management.model.Exam"/>
+        <mapping class="pl.four.software.management.model.Teacher"/>
+    </session-factory>
+</hibernate-configuration>
